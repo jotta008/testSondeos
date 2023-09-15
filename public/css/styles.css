@@ -1,0 +1,11 @@
+body{
+    font-family: 'Inconsolata', monospace;
+}
+.principal_content {
+    margin-top: 180px;
+    margin-bottom: 100px;
+}
+
+.new {
+    text-align: right;
+}
