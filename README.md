@@ -61,7 +61,6 @@ http://localhost/api/v1/get-book/
 http://localhost/api/v1/create-book/
 http://localhost/api/v1/update-book/
 http://localhost/api/v1/delete-book/
-
 ```
 ### URLs de géneros
 ```bash
@@ -70,4 +69,5 @@ http://localhost/api/v1/get-gender/
 http://localhost/api/v1/create-gender/
 http://localhost/api/v1/update-gender/
 http://localhost/api/v1/delete-gender/
+```
 
