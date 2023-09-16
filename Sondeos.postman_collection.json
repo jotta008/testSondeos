@@ -1,0 +1,377 @@
+{
+	"info": {
+		"_postman_id": "cb825e6e-dae6-4e73-a01b-96f91563bc93",
+		"name": "Sondeos",
+		"description": "Rutas para libros\n\n- get-books/\n    \n- get-book/\n    \n- create-book/\n    \n- update-book/\n    \n- delete-book/\n    \n\nRutanas para géneros\n\n- get-genders/\n    \n- get-gender/\n    \n- create-gender/\n    \n- update-gender/\n    \n- delete-gender/\n    \n\nPara obtener Token\n\n- login/",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13992565"
+	},
+	"item": [
+		{
+			"name": "Books",
+			"item": [
+				{
+					"name": "getBooks",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 3|odyUAn999DzcMS2nmwwvvmIrMBYJNfjPYFUHW1b5a3227b55",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost/api/v1/get-books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"v1",
+								"get-books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getBook",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|UfSZoBWdfeAQDA3gVEXdgUgPdk4d2GaBbaLUDqSd4042a742",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost/api/v1/get-book?id=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"v1",
+								"get-book"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createBook",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 3|odyUAn999DzcMS2nmwwvvmIrMBYJNfjPYFUHW1b5a3227b55",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"isbn\": \"31235\",\r\n    \"title\": \"dsad\",\r\n    \"author\": \"dsadas\",\r\n    \"price\": \"12.29\",\r\n    \"publication_date\": \"2023-03-29\",\r\n    \"gender_id\": 1\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/api/v1/create-book",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"v1",
+								"create-book"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateBook",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 3|odyUAn999DzcMS2nmwwvvmIrMBYJNfjPYFUHW1b5a3227b55",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"title\": \"Nuevo Libro\",\r\n    \"gender_id\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/api/v1/update-book",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"v1",
+								"update-book"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteBook",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 3|odyUAn999DzcMS2nmwwvvmIrMBYJNfjPYFUHW1b5a3227b55",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/api/v1/delete-book",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"v1",
+								"delete-book"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Genders",
+			"item": [
+				{
+					"name": "getGenders",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 3|odyUAn999DzcMS2nmwwvvmIrMBYJNfjPYFUHW1b5a3227b55",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost/api/v1/get-genders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"v1",
+								"get-genders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getGender",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|UfSZoBWdfeAQDA3gVEXdgUgPdk4d2GaBbaLUDqSd4042a742",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost/api/v1/get-gender?id=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"v1",
+								"get-gender"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createGender",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 3|odyUAn999DzcMS2nmwwvvmIrMBYJNfjPYFUHW1b5a3227b55",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Nuevo Genero\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/api/v1/create-gender",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"v1",
+								"create-gender"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateGender",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 3|odyUAn999DzcMS2nmwwvvmIrMBYJNfjPYFUHW1b5a3227b55",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"name\": \"Tets\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/api/v1/update-gender",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"v1",
+								"update-gender"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteGender",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 3|odyUAn999DzcMS2nmwwvvmIrMBYJNfjPYFUHW1b5a3227b55",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/api/v1/delete-gender",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"v1",
+								"delete-gender"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "getToken",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"test@gg.com\",\r\n    \"password\":\"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/api/v1/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"v1",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

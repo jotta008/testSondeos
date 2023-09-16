@@ -78,8 +78,10 @@ class BooksController extends Controller
 
     public function destroy(Books $book)
     {
-        // $book->update(['active' => 0]);
+        $bookDelete = Books::where(['active' => 1, 'id' => $book->id])->first();
+        $bookDelete->active = 0;
+        $bookDelete->save();
         return redirect()->route('books.index')
-            ->with('success', 'Libro eliminado correctamente');
+            ->with('success', 'Género eliminado correctamente.');
     }
 }

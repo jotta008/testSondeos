@@ -7,7 +7,7 @@
             <h2>Libros</h2>
         </div>
     </div>
-    <div class="col-lg-6 margin-tb new">
+    <div class="col-lg-6 margin-tb align-right">
         <a class="btn btn-success" href="{{ route('books.create') }}"> Crear nuevo libro</a>
     </div>
 </div>
@@ -47,7 +47,7 @@
     
                     <a class="btn btn-primary" href="{{ route('books.edit',$book->id) }}"><i class="fa-solid fa-pen-to-square"></i></a>
                     @csrf
-                    @method('PUT')
+                    @method('DELETE')
                     <button type="submit" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
                 </form>
             </td>
@@ -55,5 +55,18 @@
         @endforeach
     </tbody>
 </table>
-{!! $books->links() !!}
+<div class="container">
+    <div class="row">
+        {!! $books->links() !!}
+    </div>
+</div>
+<script>
+    function confirmDelete() {
+        if(!confirm('¿Estás seguro de que quieres eliminar este libro?')) event.preventDefault();
+
+    }
+    document.querySelectorAll('.btn-danger').forEach(function(button) {
+        button.onclick = confirmDelete;
+    });
+</script>
 @endsection

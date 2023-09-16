@@ -8,7 +8,10 @@ use Illuminate\Http\Request;
 
 class GendersController extends Controller
 {
-
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
         $genders = Genders::where(['active' => 1])->orderby('id')->paginate(5);
@@ -26,14 +29,13 @@ class GendersController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required',
-            'email' => 'required',
+            'name' => 'required'
+           
         ]);
-
         Genders::create($request->all());
 
         return redirect()->route('genders.index')
-            ->with('success', 'Genders created successfully.');
+            ->with('success', 'Género creado correctamente.');
     }
 
 
@@ -58,14 +60,16 @@ class GendersController extends Controller
         $gender->update($request->all());
 
         return redirect()->route('genders.index')
-            ->with('success', 'Gender updated successfully');
+            ->with('success', 'Género actualizado correctamente.');
     }
 
 
     public function destroy(Genders $gender)
     {
-        // $gender->update(['active' => 0]);
+        $genderDelete = Genders::where(['active' => 1, 'id' => $gender->id])->first();
+        $genderDelete->active = 0;
+        $genderDelete->save();
         return redirect()->route('genders.index')
-            ->with('success', 'Gender deleted successfully');
+            ->with('success', 'Género eliminado correctamente.');
     }
 }

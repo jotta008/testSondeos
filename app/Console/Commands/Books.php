@@ -13,14 +13,14 @@ class Books extends Command
      *
      * @var string
      */
-    protected $signature = 'books:commands {action?} {id?}';
+    protected $signature = 'books {action?} {id?}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Obtener todos los libros';
+    protected $description = 'Manejo por CLI de Libros';
 
     /**
      * Execute the console command.
@@ -138,15 +138,21 @@ class Books extends Command
             }
         }
 
-        $book = new ModelsBooks();
-        $book->isbn = $isbn;
-        $book->title = $title;
-        $book->author = $author;
-        $book->price = $price;
-        $book->publication_date = $publication_date;
-        $book->gender_id = $gender_id;
-        $book->save();
-        $this->info('Libro creado correctamente');
+        try{
+
+            $book = new ModelsBooks();
+            $book->isbn = $isbn;
+            $book->title = $title;
+            $book->author = $author;
+            $book->price = $price;
+            $book->publication_date = $publication_date;
+            $book->gender_id = $gender_id;
+            $book->save();
+            $this->info('Libro creado correctamente con el id ' . $book->id );
+        }catch(\Exception $e){
+            $this->error('Error al crear el libro');
+            $this->error($e->getMessage());
+        }
     }
     public function update()
     {

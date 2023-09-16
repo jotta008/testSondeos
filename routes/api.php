@@ -3,9 +3,7 @@
 use App\Http\Controllers\Api\Books\BooksController;
 use App\Http\Controllers\Api\Genders\GendersController;
 use App\Http\Controllers\UserController;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,7 +34,3 @@ Route::prefix("/v1")->group(function () {
     Route::post("login", [UserController::class, 'index']);
 });
 
-
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});

@@ -11,7 +11,7 @@ class BooksController extends Controller
 {
   function __construct()
   {
-    $this->middleware('auth');
+    $this->middleware('auth:sanctum');
   }
 
   public function getBooks()
@@ -23,6 +23,9 @@ class BooksController extends Controller
   public function getBook(Request $request)
   {
     $book = Books::where(['active' => 1, 'id' => $request->id])->orderby('id')->first();
+    if($book == null){
+      return response()->json(['error' => 'No se encontró el libro']);
+    }
     return response()->json($book);
   }
 
@@ -77,6 +80,9 @@ class BooksController extends Controller
   {
     $data = $request->all();
     $book = Books::where(['active' => 1, 'id' => $data['id']])->first();
+    if($book == null){
+      return response()->json(['error' => 'No se encontró el libro']);
+    }
     $book->active = 0;
     $book->save();
     return response()->json($book);

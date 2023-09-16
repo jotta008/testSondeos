@@ -11,7 +11,7 @@ class GendersController extends Controller
 {
   function __construct()
   {
-    $this->middleware('auth');
+    $this->middleware('auth:sanctum');
   }
 
   public function getGenders()
@@ -20,9 +20,12 @@ class GendersController extends Controller
     return response()->json($genders);
   }
 
-  public function getBook(Request $request)
+  public function getGender(Request $request)
   {
     $gender = Genders::where(['active' => 1, 'id' => $request->id])->get();
+    if($gender == null){
+      return response()->json(['error' => 'No se encontró el género']);
+    }
     return response()->json($gender);
   }
 
@@ -62,6 +65,9 @@ class GendersController extends Controller
   {
     $data = $request->all();
     $book = Genders::where(['active' => 1, 'id' => $data['id']])->first();
+    if($book == null){
+      return response()->json(['error' => 'No se encontró el género']);
+    }
     $book->active = 0;
     $book->save();
     return response()->json($book);
