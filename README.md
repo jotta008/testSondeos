@@ -1,5 +1,10 @@
 # Test Sondeos
 
+## Stack tecnológico
+- Laravel Sail
+- Docker
+- Mysql
+
 
 ## Configuración Inicial
 
